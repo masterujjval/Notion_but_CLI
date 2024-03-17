@@ -4,7 +4,7 @@ echo -e "\e[32mTasks reminder and editor\e[0m"
 i=1
 if [ $1 == "-d"  ] 2>> /dev/null
 then
-    $(rm -r task.txt)
+    $(sudo rm -r /usr/local/bin/task.txt)
     echo "Tasks deleted successfully"
 elif [ $# -eq 0 ]
 then   
@@ -13,11 +13,11 @@ then
     
         echo -e "\e[36mTASK\e[0m: "
         read n 
-        sudo echo "$n" >> task.txt # used echo cuz without it, the $n will be treated as a command
+        sudo echo "$n" >> /usr/local/bin/task.txt # used echo cuz without it, the $n will be treated as a command
 
     done
 elif [ $1 == "-l" ];then
-    cat task.txt
+    sudo cat /usr/local/bin/task.txt
 else
    echo "error occured"
 fi
