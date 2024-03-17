@@ -13,7 +13,7 @@ then
     
         echo -e "\e[36mTASK\e[0m: "
         read n 
-        echo "$n" >> task.txt # used echo cuz without it, the $n will be treated as a command
+        sudo echo "$n" >> task.txt # used echo cuz without it, the $n will be treated as a command
 
     done
 elif [ $1 == "-l" ];then
